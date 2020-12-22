@@ -13,28 +13,21 @@ public class LeetCodeTest {
     public static void main(String[] args) {
 
 
-//        romanToInt("VM");
-        /**
-         * 编写一个函数来查找字符串数组中的公共前缀。
-         * 示例1：输入 flower . flow flight ，输出 fl
-         *  示例2：输入dog,racecar  ,car  输出"" 输入不存在公共前缀
-         *
-         * */
-
-        String f = "aaa,aa,aaa";
-        String longst = longst(f);
-        Logs.s("   longstlongst   " + longst);
 
 
     }
 
-    private static String longst(String fl) {
 
-        //得到字符数组
-        String[] split = fl.split(",");
-        String first = "";
-        //字符数组是空的直接返回
-        if (split == null || split.length == 0) {
+    /**
+     * 编写一个函数来查找字符串数组中的公共前缀。
+     * 示例1：输入 flower . flow flight ，输出 fl
+     *  示例2：输入dog,racecar  ,car  输出"" 输入不存在公共前缀
+     *
+     * */
+    private static String longst(String[] split) {
+
+        //字符数组是空的直接返回空串
+        if (split.length == 0) {
             return "";
         }
         //字符数组等于1 默认第一个为公共前缀。
@@ -43,44 +36,35 @@ public class LeetCodeTest {
         }
 
         //把第一个字符数组取出来方便后边使用
-        first = split[0];
-
-        String help = "";
+        String first = help(split[0], split[1]);
+        //first等于null时表示已经数据已经比对完
+        if (first == null) {
+            return "";
+        }
         //从0和1开始运算
-        for (int i = 1; i < split.length; i++) {
+        for (int i = 2; i < split.length; i++) {
             //help 记录上一个相等的公共前缀
-            help = help(first, split[i]);
-            if (help == null) {
+            first = help(first, split[i]);
+            if (first == null) {
                 return "";
             }
-
         }
-        return help;
-
+        return first;
     }
-
-    static int min = 0;
 
     private static String help(String length, String sss) {
         //取两个数的最小值
-        int m = Math.min(length.length(), sss.length());
-        if (min == 0) {
-            min = Math.min(length.length(), sss.length());
-        }
-
-        if (min > m) {
-            min = m;
-        }
+        int len = Math.min(length.length(), sss.length());
         //字符串倒序比较，
-        for (int i = min; i > 0; i--) {
-            String substring = length.substring(0, i);
+        for (int i = len; i > 0; i--) {
+            String s = length.substring(0, i);
             //相等说明有公共前缀，直接返回
-            if (substring.equals(sss.substring(0, i))) {
-                return substring;
+            if (s.equals(sss.substring(0, i))) {
+                return s;
             }
-
         }
-        return null;
+
+        return "";
 
     }
 
