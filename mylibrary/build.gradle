@@ -27,7 +27,8 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
+apply plugin: 'com.github.dcendents.android-maven'
+group='903023560@qq.com'  //注意com.github.github账号
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
