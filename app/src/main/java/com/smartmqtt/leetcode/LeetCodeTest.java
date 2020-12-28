@@ -13,17 +13,14 @@ public class LeetCodeTest {
     public static void main(String[] args) {
 
 
-
-
     }
 
 
     /**
      * 编写一个函数来查找字符串数组中的公共前缀。
      * 示例1：输入 flower . flow flight ，输出 fl
-     *  示例2：输入dog,racecar  ,car  输出"" 输入不存在公共前缀
-     *
-     * */
+     * 示例2：输入dog,racecar  ,car  输出"" 输入不存在公共前缀
+     */
     private static String longst(String[] split) {
 
         //字符数组是空的直接返回空串
@@ -96,16 +93,7 @@ public class LeetCodeTest {
      * IC和IM这样的例子并不符合题目的要求，49应该写作VLIX，999应该写作CMXCLX
      */
     private static void romanToInt(String s) {
-//
-//        HashMap<String, Integer> map = new HashMap<>();
-//        map.put("I", 1);
-//        map.put("V", 5);
-//        map.put("X", 10);
-//        map.put("L", 50);
-//        map.put("C", 100);
-//        map.put("D", 500);
-//        map.put("M", 1000);
-//        XXVII
+
         int length = s.length();
         int romanInt = 0;
         for (int i = 0; i < length; i++) {
@@ -159,7 +147,6 @@ public class LeetCodeTest {
                 }
             }
 
-            //    XXVII
             Logs.s("   s.charAt(i)  " + romanInt);
 
         }
