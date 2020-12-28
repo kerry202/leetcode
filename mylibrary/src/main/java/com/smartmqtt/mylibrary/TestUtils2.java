@@ -4,11 +4,11 @@ package com.smartmqtt.mylibrary;
  * @author: kerry
  * date: On $ {DATE}
  */
-public class TestUtils {
+public class TestUtils2 {
 
-    public static void s(){
+    public static void ssss(){
 
-        System.out.println("  aaaaaaaaaaaaaaaaaa ");
+        System.out.println("  ssssssssssss ");
 
     }
 }
